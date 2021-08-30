@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sample startup doc</title>
+
+    <!-- <link rel="stylesheet" href="./rsrc/css/reset.css" /> -->
+
+    <style>
+
+        h1 {
+            padding: 30px;
+        }
+
+        article {
+            padding: 20px;
+            margin: 3px;
+            background-color: lightblue;
+        }
+    
+        .partial {
+            padding: 30px;
+            display: inline-block;
+            background-color: darkslateblue;
+        }
+    
+        .anim-rotate {
+            animation: rotate-keyframes 1s linear infinite
+        }
+    
+        @keyframes rotate-keyframes {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+
+        svg {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            display: inline-block;
+        }
+    
+    
+    ul {
+        padding: 30px;
+        background-color: rgba(121, 116, 98, 0.425);
+    }
+
+    li {
+        width: max-content;
+        margin: 4px 0 0 0;
+        padding: 6px;
+        background-color:rgba(255, 105, 180, 0.808);
+    }
+    
+    
+    </style>
+
+</head>
+<body>
+
+
+<h1>_lab</h1>
+<ul>
+    <h4>implented stuff:</h4>
+    <li>
+        dom ready check based on Promises
+    </li>
+    <li>html partials</li>
+</ul>
+
+
+
+<div class="partial">
+    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
+    <path id="Circle" fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+      <animateTransform 
+         attributeName="transform" 
+         attributeType="XML" 
+         type="rotate"
+         dur="1s" 
+         from="0 50 50"
+         to="360 50 50" 
+         repeatCount="indefinite" />
+    </path>
+    </svg>
+    <link rel="partial" href="./rsrc/_42/partialHtml/foo.html" />
+</div>
+
+<div class="partial">
+    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
+        <use href="#Circle" />
+    </svg>
+    <link rel="partial" href="./rsrc/_42/partialHtml/bar.html">
+</div>
+
+
+<div class="partial">
+
+    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
+        <use href="#Circle" />
+    </svg>
+
+    <link rel="partial" href="./rsrc/_42/partialHtml/baz.html" />
+
+</div>
+
+
+
+
+<script module src="./rsrc/_42/ready/readyPromise.js"></script>
+<!-- <script module src="./rsrc/_42/partialHtml/fetchHtmlPartial.js"></script> -->
+
+
+<script>
+
+////// DOM READY CHECK
+domready.then(msg => {
+
+    // DOM is ready launch the app
+    // start_application('OK, document is ready');
+    console.log('hey');
+
+    const timing = 3000;
+}, err => {
+    console.log(err);
+});
+
+
+
+////// FUNCTION STARTS AFTER DOM IS READY
+function start_application(message) {
+
+    console.log( message );
+
+
+
+    ////// PARTIALS
+    const partialTags = document.getElementsByTagName("link");
+
+    // if (document.readyState == "interactive") {
+    for (let i = 0; i < partialTags.length; i++) {
+        Partial.fetchHtml( partialTags[i] );
+    }
+    // }
+    ////// PARTIALS
+  
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script debug language="javascript">
+// window.tdiff = []; fred = function(a,b){return a-b;};
+// window.document.onload = function(e){ 
+//     console.log("document.onload", e, Date.now() ,window.tdiff,  
+//     (window.tdiff[0] = Date.now()) && window.tdiff.reduce(fred) ); 
+// }
+// window.onload = function(e){ 
+//     console.log("window.onload", e, Date.now() ,window.tdiff, 
+//     (window.tdiff[1] = Date.now()) && window.tdiff.reduce(fred) ); 
+// }
+</script>
+
+</body>
+</html>

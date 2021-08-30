@@ -115,7 +115,7 @@
 
 
 <script module src="./rsrc/_42/ready/readyPromise.js"></script>
-<!-- <script module src="./rsrc/_42/partialHtml/fetchHtmlPartial.js"></script> -->
+<script module src="./rsrc/_42/partialHtml/fetchPartialHtml.js"></script>
 
 
 <script>
@@ -124,7 +124,7 @@
 domready.then(msg => {
 
     // DOM is ready launch the app
-    // start_application('OK, document is ready');
+    start_application('OK, document is ready');
     console.log('hey');
 
     const timing = 3000;
@@ -144,11 +144,9 @@ function start_application(message) {
     ////// PARTIALS
     const partialTags = document.getElementsByTagName("link");
 
-    // if (document.readyState == "interactive") {
     for (let i = 0; i < partialTags.length; i++) {
         Partial.fetchHtml( partialTags[i] );
     }
-    // }
     ////// PARTIALS
   
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sample startup doc</title>
 
-    <!-- <link rel="stylesheet" href="./rsrc/css/reset.css" /> -->
+    <link rel="stylesheet" href="./rsrc/_ui/css/reset.css" />
 
     <style>
 
@@ -55,6 +55,10 @@
         padding: 6px;
         background-color:rgba(255, 105, 180, 0.808);
     }
+
+    .css {
+        background-color:rgba(174, 85, 171, 0.808);
+    }
     
     
     </style>
@@ -66,11 +70,12 @@
 <h1>_lab</h1>
 <ul>
     <h4>implented stuff:</h4>
-    <li>
-        dom ready check based on Promises
-    </li>
-    <li>html partials</li>
+    <li class="css">minimal css reset for html5</li>
+    <li>dom ready check based on Promises</li>
+    <li>html partials / with fetch and Promises</li>
 </ul>
+
+
 
 
 
@@ -102,20 +107,26 @@
 
 <div class="partial">
 
-    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-    x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
-        <use href="#Circle" />
-    </svg>
+
 
     <link rel="partial" href="./rsrc/_42/partialHtml/baz.html" />
 
 </div>
+<style>
+    #E {
+        width: 40px;
+    }
+</style>
+<object id="E" type="image/svg+xml" data="./_tmp/loading.svg">
+    <param name="src" value="loading.svg" />
+</object>
 
 
 
-
+<!-- _42 scripts -->
 <script module src="./rsrc/_42/ready/readyPromise.js"></script>
 <script module src="./rsrc/_42/partialHtml/fetchPartialHtml.js"></script>
+
 
 
 <script>
@@ -124,8 +135,7 @@
 domready.then(msg => {
 
     // DOM is ready launch the app
-    start_application('OK, document is ready');
-    console.log('hey');
+    start_application('___ dom ready, launching app');
 
     const timing = 3000;
 }, err => {

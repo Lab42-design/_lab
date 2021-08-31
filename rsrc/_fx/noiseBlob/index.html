@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>noiseblob</title>
+
+    <link rel="stylesheet" href="../../_ui/css/reset.css" />
+
+</head>
+<body>
+
+
+
+<style>
+/* body {
+  background-image: radial-gradient(circle at 50% top, 
+                                  rgba(77, 66, 154, 0.6) 0%, 
+                                  rgba(88, 48, 133, 0) 75%), 
+                    radial-gradient(circle at right top, 
+                                  #360f57f7 0%, 
+                                  rgba(121, 74, 162, 0) 57%);
+  background-repeat: no-repeat;
+  background-size: 100% 120%;
+} */
+
+body {
+    height: 500vh;
+    background-color: #2f2357;
+}
+
+section {
+    height: 100vh;
+    margin: 1px 0 0 0;
+    background-color: rgba(66, 11, 94, 0.228);
+}
+
+article {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* background-color: rgba(24, 9, 46, 0.132); */
+}
+
+/* stage / flex center */
+#__stage {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+    background-color: transparent;
+}
+
+canvas {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: fixed;
+    z-index:12;
+}
+
+
+section {
+    color: white;
+}
+
+</style>
+
+
+
+<main>
+
+
+
+
+<section id="__stage">
+
+    <article>
+        <canvas id="__canvas"></canvas>
+    </article>
+
+</section>
+
+
+
+
+</main>
+
+
+
+<!-- simplex noise -->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js'></script> -->
+<script src="./simplex-noise.js"></script>
+<script src="./fur.js"></script>
+
+
+
+</body>
+</html>

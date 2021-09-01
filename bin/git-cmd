@@ -14,7 +14,14 @@ git pull --recurse-submodules
 To remove a submodule,
 
 Remove it from the .git configuration files:
-git rm the_submodule
+git rm ./rsrc/_42/
+git rm ./rsrc/_ui/
+
+rm -rf .git/modules/rsrc/_42/
+rm -rf .git/modules/rsrc/_ui/
+
+
+
 
 Remove it from the modules folder. You can also do this from a UI file explorer of some type:
 rm -rf .git/modules/the_submodule
@@ -32,6 +39,4 @@ Would show you all submodule entries, and with
 git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
 
 
-
-mikkas-iMac:_lab mikka$ rm -rf .git/modules/rsrc/_42/
-mikkas-iMac:_lab mikka$ rm -rf .git/modules/rsrc/_ui/
+git submodule update --remote --merge

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>_lab</title>
+
+    <link rel="stylesheet" href="./rsrc/_ui/css/reset.css" />
+
+</head>
+<body>
+
+<h1>_lab</h1>
+
+
+
+
+<!-- _42 scripts -->
+<script module src="./rsrc/_42/readyPromise/readyPromise.js"></script>
+<script module src="./rsrc/_42/partialHtml/fetchPartialHtml.js"></script>
+
+<script>
+domready.then(document_ready);
+
+winready.then(window_ready);
+
+Promise.all([domready, winready]).then(start_application);
+
+
+function start_application() {
+    console.log('documentResolve AND windowResolve');
+    console.log('OK');
+};
+
+function window_ready() {
+    console.log('windowResolve');
+    console.log('OK');
+};
+
+function document_ready() {
+    console.log('documentResolve');
+    console.log('OK');
+};
+</script>
+
+
+
+</body>
+</html>

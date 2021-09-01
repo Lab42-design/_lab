@@ -14,6 +14,13 @@
             padding: 30px;
         }
 
+
+        section {
+            width: 100vw;
+            min-height: 75vh;
+        }
+
+
         article {
             padding: 20px;
             margin: 3px;
@@ -79,47 +86,102 @@
 
 
 
-<div class="partial">
-    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-    x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
-    <path id="Circle" fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
-      <animateTransform 
-         attributeName="transform" 
-         attributeType="XML" 
-         type="rotate"
-         dur="1s" 
-         from="0 50 50"
-         to="360 50 50" 
-         repeatCount="indefinite" />
-    </path>
-    </svg>
-    <link rel="partial" href="./rsrc/_42/partialHtml/foo.html" />
-</div>
-
-<div class="partial">
-    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-    x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
-        <use href="#Circle" />
-    </svg>
-    <link rel="partial" href="./rsrc/_42/partialHtml/bar.html">
-</div>
 
 
-<div class="partial">
+<main>
+
+
+<!-- PARTIAL -->
+<section>
+
+
+    <div class="partial">
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
+        <path id="Circle" fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+          <animateTransform 
+             attributeName="transform" 
+             attributeType="XML" 
+             type="rotate"
+             dur="1s" 
+             from="0 50 50"
+             to="360 50 50" 
+             repeatCount="indefinite" />
+        </path>
+        </svg>
+        <link rel="partial" href="./rsrc/_42/partialHtml/foo.html" />
+    </div>
+    
+    <div class="partial">
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
+            <use href="#Circle" />
+        </svg>
+        <link rel="partial" href="./rsrc/_42/partialHtml/bar.html">
+    </div>
+    
+    <div class="partial">
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
+            <use href="#Circle" />
+        </svg>
+        <link rel="partial" href="./rsrc/_42/partialHtml/baz.html" />
+    </div>
+    <!-- <style>
+        #E {
+            width: 40px;
+        }
+    </style>
+    <object id="E" type="image/svg+xml" data="./_tmp/loading.svg">
+        <param name="src" value="loading.svg" />
+    </object> -->
+    
+    </section>
+    <!-- PARTIAL -->
 
 
 
-    <link rel="partial" href="./rsrc/_42/partialHtml/baz.html" />
 
-</div>
-<style>
-    #E {
-        width: 40px;
-    }
-</style>
-<object id="E" type="image/svg+xml" data="./_tmp/loading.svg">
-    <param name="src" value="loading.svg" />
-</object>
+<!-- SLIDESHOW -->
+<section>
+<link rel="stylesheet" href="./rsrc/_fx/slideshow/slideshow.css" />
+
+
+<ul class="slideshow">
+    <li><img src="./rsrc/_fx/slideshow/water.png" alt="" /></li>
+    <li><img src="./rsrc/_fx/slideshow/knives.png" alt="" /></li>
+    <li><img src="./rsrc/_fx/slideshow/fly.png" alt="" /></li>
+</ul>
+
+
+<script>
+
+window.onload = function() {
+// window.addEventListener('load', (event) => {
+
+    console.log('___slideshow starts');
+
+    const fadeComplete = function (e) {
+        e.target.parentNode.appendChild(e.target);
+    };
+
+    document.querySelectorAll(".slideshow > li").forEach(function (current) {
+        current.addEventListener("animationend", fadeComplete, false);
+    });
+
+};
+
+</script>
+</section>
+<!-- SLIDESHOW -->
+
+</main>
+
+
+
+
+
+
 
 
 

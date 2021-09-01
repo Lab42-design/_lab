@@ -127,6 +127,24 @@
 <script module src="./rsrc/_42/ready/readyPromise.js"></script>
 <script module src="./rsrc/_42/partialHtml/fetchPartialHtml.js"></script>
 
+<script>
+
+// add an appropriate event listener
+// window.addEventListener("htmlPartialsReady", function(e) { 
+//     console.log( 'htmlPartialsReady' );
+// });
+
+// create and dispatch the event
+// const event = new CustomEvent("htmlPartialsReady", {
+//     detail: {
+//         htmlPartialsReady: true
+//     }
+// });
+// window.dispatchEvent(event);
+
+</script>
+
+
 
 
 <script>
@@ -135,12 +153,29 @@
 domready.then(msg => {
 
     // DOM is ready launch the app
-    start_application('___ dom ready, launching app');
+    // start_application('___ dom ready, launching app');
 
     const timing = 3000;
 }, err => {
     console.log(err);
 });
+
+
+
+
+winready.then(msg => {
+
+    // DOM is ready launch the app
+    console.log('___ WINDOW ready, launching app');
+    start_application('___ dom ready, launching app');
+
+const timing = 3000;
+}, err => {
+    console.log(err);
+});
+
+
+
 
 
 

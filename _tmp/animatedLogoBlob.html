@@ -1,0 +1,47 @@
+<div id="bob-the-blob">
+    <style>
+        #bob-the-blob {
+            overflow: hidden;
+            top: 10px;
+            left: 10px;
+            width: 4rem;
+            height: 4rem;
+            background-color: transparent;
+            animation: _blob_keyframes 30s ease-in-out infinite both alternate;
+        }
+        
+        @keyframes _blob_keyframes {
+             0% { border-radius: 52% 48% 50% 52% / 50% 50% 50% 50%; 
+               /* background-color: orange; */ } 
+            14% { border-radius: 44% 68% 54% 48% / 49% 60% 40% 48%;
+                /* background-color: orange; */ } 
+            28% { border-radius: 54% 46% 38% 62% / 49% 65% 30% 53%; 
+                /* background-color: rgb(0, 255, 34); */ } 
+            42% { border-radius: 61% 46% 55% 45% / 61% 46% 62% 44%; 
+                /* background-color: rgb(43, 0, 255); */ } 
+            56% { border-radius: 61% 52% 65% 43% / 65% 53% 55% 49%; 
+                /* background-color: rgb(255, 0, 132); */ } 
+            70% { border-radius: 50% 60% 44% 66% / 56% 68% 39% 58%; 
+                /* background-color: rgba(15, 67, 29, 0.94); */ } 
+            84% { border-radius: 46% 54% 50% 54% / 35% 61% 45% 63%; 
+                /* background-color: rgb(124, 91, 28); */ } 
+            100% { border-radius: 63% 43% 54% 46% / 55% 48% 52% 45%; 
+                /* background-color: rgb(82, 15, 55); */
+        }
+    </style>
+    <!--
+    <img src="./_rsrc/svg/sz-logo-2.svg" alt="" />
+    -->
+    <svg version="1.1" id="Layer_1" viewBox="0 0 100 100">
+        <style type="text/css">
+            .logo {
+                <!-- fill:#231F20; -->
+                fill: rgba(33, 33, 33, 0.9);
+            }
+        </style>
+        <path class="logo" d="M0.1-0.2v100h100v-100H0.1z M29.6,61.7h41c4.8,0,8.6,3.9,8.6,8.6S75.4,79,70.7,79H24.1c-1,0-1.8-0.8-1.8-1.8
+        s0.8-1.8,1.8-1.8h46.6c2.8,0,5-2.3,5-5c0-2.8-2.3-5-5-5h-41c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6h41c2.8,0,5-2.3,5-5
+        c0-2.8-2.3-5-5-5h-41c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6h46.6c1,0,1.8,0.8,1.8,1.8s-0.8,1.8-1.8,1.8H29.6c-2.8,0-5,2.3-5,5
+        c0,2.8,2.3,5,5,5h41c4.8,0,8.6,3.9,8.6,8.6s-3.9,8.6-8.6,8.6h-41c-2.8,0-5,2.3-5,5C24.6,59.4,26.8,61.7,29.6,61.7z"/>
+    </svg>
+</div>

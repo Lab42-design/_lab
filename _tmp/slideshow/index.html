@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="./slideshow.css" />
+    
+<ul class="slideshow">
+    <li><img src="./knives.png" alt="" /></li>
+    <li><img src="./water.png" alt="" /></li>
+    <li><img src="./fly.png" alt="" /></li>
+</ul>
+
+<script>
+
+
+
+
+
+window.onload = function() { // can also use window.addEventListener('load', (event) => {
+
+    console.log('___slideshow starts');
+
+    const fadeComplete = function (e) {
+        e.target.parentNode.appendChild(e.target);
+    };
+
+    document.querySelectorAll(".slideshow > li").forEach(function (current) {
+        current.addEventListener("animationend", fadeComplete, false);
+    });
+
+};
+
+
+
+
+
+</script>

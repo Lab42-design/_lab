@@ -1,0 +1,54 @@
+@keyframes _transition {
+    0% { opacity: 1.0; }
+    60% { transform: scale(1.06); }
+    100% {
+        opacity: 0.0;
+        transform: scale(1.02);
+    }
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.slideshow > li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow > img {
+    width: 100%;
+    height: 100%;
+}
+
+/* current slide */
+.slideshow > li:nth-of-type(1) {
+    animation-name: _transition;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    z-index: 20;
+}
+
+/* next slide to display */
+.slideshow > li:nth-of-type(2) {
+    z-index: 10;
+}
+
+.slideshow > li:nth-of-type(3) {
+    /* z-index: 10; */
+    animation-delay: 12s;
+    animation-duration: 6s;
+}
+
+/* all other slides */
+.slideshow > li:nth-of-type(n+3) {
+    display: none;
+}

@@ -33,3 +33,5 @@ git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
 
 
 
+mikkas-iMac:_lab mikka$ rm -rf .git/modules/rsrc/_42/
+mikkas-iMac:_lab mikka$ rm -rf .git/modules/rsrc/_ui/

@@ -63,39 +63,7 @@
 <div>
 
 
-<style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  /* align our svg to the center of the viewport both horizontally and vertically */
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-svg {
-  /* a perfectly square <svg> element that will never overflow the viewport */
-  width: 90vmin;
-  height: 90vmin;
-}
-</style>
-<!-- Draw everything relative to a 200x200 canvas, this will then scale to any resolution -->
-<svg viewBox="0 0 200 200">
-    <defs>
-      <!-- Our gradient fill #gradient -->
-      <linearGradient id="gradient" gradientTransform="rotate(90)">
-        <!-- Use CSS custom properties for the start / stop colors of the gradient -->
-        <stop id="gradientStop1" offset="0%" stop-color="var(--startColor)" />
-        <stop id="gradientStop2 " offset="100%" stop-color="var(--stopColor)" />
-            <!-- Add a path with an empty data attribute, fill it with the gradient we defined earlier -->
-        <path d="" fill="url('#gradient')"></path>
-      </linearGradient>
-    </defs>
-  </svg>
 
 
 
@@ -111,6 +79,53 @@ svg {
 
 
 
+
+<style>
+
+
+    svg {
+      /* a perfectly square <svg> element that will never overflow the viewport */
+      width: 30vmin;
+      height: 30vmin;
+      /* background-color: lemonchiffon; */
+      /* background: rgb(168,190,185);
+        background: radial-gradient(circle, rgba(168,190,185,1) 0%, rgba(174,177,136,1) 100%); */
+    }
+    </style>
+    <!-- Draw everything relative to a 200x200 canvas, this will then scale to any resolution -->
+    <svg viewBox="0 0 200 200">
+        <defs>
+            <!-- Our gradient fill #gradient -->
+            <linearGradient id="gradient" gradientTransform="rotate(90)">
+                <!-- Use CSS custom properties for the start / stop colors of the gradient -->
+                <stop id="gradientStop1" offset="0%" stop-color="#a8beb9" />
+                <stop id="gradientStop2 " offset="100%" stop-color="#aeb188" />
+                <!-- Add a path with an empty data attribute, fill it with the gradient we defined earlier -->
+                
+            </linearGradient>
+            <!-- <path d="" fill="url('#gradient')"></path> -->
+                <!-- The rectangle is filled using a linear gradient paint server -->
+            <rect fill="url(#gradient)" stroke="black" stroke-width="5"  
+            x="100" y="100" width="600" height="200"/>
+        </defs>
+    </svg>
+
+
+
+
+<style>
+    .gradient {
+        width: 400px;
+        height: 150px;
+    }
+
+    .a {
+        background: bg-gradient-to-r from-blue-300 via-green-200 to-yellow-300;
+    }
+</style>
+<span class=="gradient a">
+
+</span>
 
 
 

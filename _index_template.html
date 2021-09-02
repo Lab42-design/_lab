@@ -12,8 +12,13 @@
 </head>
 <body>
 
+
+
 <h1>_lab</h1>
 
+<div class="partial">
+    <link rel="html" href="./app/partials/hello-world.html" />
+</div>
 
 
 
@@ -42,7 +47,24 @@ function window_ready() {
 function document_ready() {
     console.log('documentResolve');
     console.log('OK');
+    domready_start();
 };
+
+
+
+
+function domready_start() {
+
+    ////// PARTIALS
+    const partialTags = document.getElementsByTagName("link");
+
+    for (let i = 0; i < partialTags.length; i++) {
+        Partial.fetchHtml( partialTags[i] );
+    }
+    ////// PARTIALS
+
+}
+
 </script>
 
 

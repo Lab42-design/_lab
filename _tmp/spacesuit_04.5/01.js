@@ -9,7 +9,7 @@
 // document ready
 function ready(callbackFunc)
 {
-
+    console.log('----- callbackFunc');
     if (document.readyState !== 'loading') {
         // Document is already ready, call the callback directly
         callbackFunc();
@@ -30,6 +30,7 @@ function ready(callbackFunc)
 }
 
 var domReady = function(callback) {
+    console.log('----- domReady');
     document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
 };
 
@@ -48,7 +49,7 @@ document.querySelectorAll('ul').forEach(function(tag) {
 function imageListHover()
 {
     // let elements = document.querySelectorAll( 'ul' ); // '.classname'
- 
+    console.log('----- imageListHover');
     for ( let element of elements )
     {
         elementHover( element );
@@ -78,6 +79,7 @@ function imageListHover()
 // dom is ready
 domReady(function()
 {
+    console.log('----- domReady');
     // Your code here
 
     // remove class with js, as we have js enabled
@@ -104,6 +106,7 @@ ready(function()
 
 
 function show(elem) {   
+    console.log('----- show');
     var p = document.getElementsByClassName("hidden");
     if (p[elem] != undefined) {
         if (p[elem].style.display == "none") {

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="01.css" />
+    <link rel="icon" href="images/favicon.png" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" />
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="shine/shine.min.js"></script>
+</head>
+<body>
+
+    <h1 id="headline" class="demo-text">design</h1>
+
+
+<div id="container">
+
+
+    <ul id="11">
+        <li><img src="images/n1.png" /></li>
+        <li><img src="images/n2.png" /></li>
+        <li><img src="images/n3.png" /></li>
+        <li><img src="images/n4.png" /></li>
+        <li><img src="images/n5.png" /></li>
+        <li><img src="images/n6.png" /></li>
+        <li><img src="images/n7.png" /></li>
+    </ul>
+
+    <ul id="22">
+        <li><img src="images/01.png" /></li>
+        <li><img src="images/02.png" /></li>
+        <li><img src="images/03.png" /></li>
+        <li><img src="images/04.png" /></li>
+    </ul>
+
+    <ul id="10">
+        <li><img src="images/g2.png" /></li>
+        <li><img src="images/g3.png" /></li>
+        <li><img src="images/x0.png" /></li>
+        <li><img src="images/x1.png" /></li>
+    </ul>
+
+    <ul id="01">
+        <li><img src="01.jpg" /></li>
+        <li><img src="01.jpg" /></li>
+
+    </ul>
+
+    <ul id="02zorro">
+        <li><img src="03.jpg" /></li>
+    </ul>
+
+    <ul id="03">
+        <li><img src="03.jpg" /></li>
+        <li><img src="03.jpg" /></li>
+        <li><img src="03.jpg" /></li>
+    </ul>
+
+    <ul id="04" class="exp">
+        <li><img src="04.jpg" /></li>
+        <li><img src="04.jpg" /></li>
+    </ul>
+
+    <ul id="05">
+        <li><img src="03.jpg" /></li>
+    </ul>
+
+    <ul id="06">
+        <li><img src="02.jpg" /></li>
+    </ul>
+
+    <ul id="07">
+        <li><img src="01.jpg" /></li>
+    </ul>
+
+    <ul id="08" class="exp">
+        <li><img src="02.jpg" /></li>
+    </ul>
+
+    <ul id="09">
+        <li><img src="03.jpg" /></li>
+        <li><img src="03.jpg" /></li>
+    </ul>
+
+
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+  // use new shinejs.Shine(...) if Shine is already defined somewhere else
+  // var shine = new shinejs.Shine(document.getElementById('headline'));
+  var shine = new Shine(document.getElementById('headline'));
+
+  function handleMouseMove(event) {
+    shine.light.position.x = event.clientX;
+    shine.light.position.y = event.clientY;
+    shine.draw();
+  }
+
+  window.addEventListener('mousemove', handleMouseMove, false);
+</script>
+
+
+
+<script src="01.js"></script>
+</body>
+</html>

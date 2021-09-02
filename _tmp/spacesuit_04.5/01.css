@@ -1,0 +1,99 @@
+/* css vertical centre */
+/* body .text p {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } */
+
+
+
+/* typed */
+/* .TYPED {
+    z-index: 9;
+
+
+
+        padding: 70px 0;
+        border: 3px solid green;
+        text-align: center;
+      
+
+
+} */
+
+/* hide all elements */
+/* .js  ul {
+    opacity: .4;
+} */
+
+
+
+
+
+
+
+ul {
+    overflow: hidden;
+    float: left;
+    border: 1px black solid;
+    height: fit-content;
+}
+
+li {
+    line-height: 0.5em; 
+    float: left;
+    height: auto;
+}
+
+
+.exp {
+    clear: both;
+}
+
+
+
+
+/* .show {
+    opacity: 1;
+    transition: opacity 800ms;
+ }
+.hide {
+    opacity: 0;
+    transition: opacity 800ms;
+} */
+
+/* .hidden {
+    opacity: 0;
+} */
+
+/* RESPONSIVE */
+img, .responsive {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* EFFECT */
+img {
+    filter: grayscale(1);
+    opacity: 0.1;
+    transition: ease-in-out .5s;
+}
+
+/* EFFECT HOVER */
+ul:hover > li img {
+    filter: none;
+    opacity: 1;
+}
+
+
+
+
+
+
+

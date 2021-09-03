@@ -6,79 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>_lab</title>
 
-    <link rel="icon" href="/rsrc/_ui/lab42.png" />
-    <link rel="stylesheet" href="./rsrc/_ui/css/reset.css" />
+    <link rel="icon" href="/app/ui/favicon.ico" />
+    <link rel="stylesheet" href="./rsrc/_42/ui/reset.css" />
+
+    <link rel="stylesheet" href="./app/ui/main.css">
 
 </head>
 <body>
 
-
-
 <h1>_lab</h1>
 
-<div class="partial">
-    <link rel="html" href="./app/partials/hello-world.html" />
-</div>
+<header>
+    <div class="partial">
+        <link rel="html" href="./rsrc/_fx/smallParts/_logoBlob.html" />
+    </div>
+    <nav>
+        <link rel="html" href="./app/partials/navigation.html" />
+    </nav>
+</header>
+
+
+<main>
+
+
+    <section>
+
+        <div class="partial">
+            <link rel="html" href="./app/partials/hello-world.html" />
+        </div>
+
+    </section>
+
+</main>
 
 
 
-
-<div class="partial">
-    <link rel="html" href="./rsrc/_fx/smallParts/_logoBlob.html" />
-</div>
-
-
-
-
+<footer>
+    <link rel="html" href="./app/partials/footer.html" />
+</footer>
 
 
 
 <!-- _42 scripts -->
 <script module src="./rsrc/_42/readyPromise/readyPromise.js"></script>
-<script module src="./rsrc/_42/fetchHtml/fetchHtml.js"></script>
+<script module src="./rsrc/_42/fetchHtml/fetchHtml.src.js"></script>
 
-<script>
-domready.then(document_ready);
-
-winready.then(window_ready);
-
-Promise.all([domready, winready]).then(start_application);
-
-
-function start_application() {
-    console.log('documentResolve AND windowResolve');
-    console.log('OK');
-};
-
-function window_ready() {
-    console.log('windowResolve');
-    console.log('OK');
-};
-
-function document_ready() {
-    console.log('documentResolve');
-    console.log('OK');
-    domready_start();
-};
-
-
-
-
-function domready_start() {
-
-    ////// PARTIALS
-    const partialTags = document.getElementsByTagName("link");
-
-    for (let i = 0; i < partialTags.length; i++) {
-        fetchHtml.partial( partialTags[i] );
-    }
-    ////// PARTIALS
-
-}
-
-</script>
-
-
+<script module src="./app/app.js"></script>
 
 </body>
 </html>

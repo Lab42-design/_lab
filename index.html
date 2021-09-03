@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sample startup doc</title>
 
-    <link rel="icon" href="/rsrc/_ui/lab42.png" />
-    <link rel="stylesheet" href="./rsrc/_ui/css/reset.css" />
+    <!-- <link rel="icon" href="/rsrc/_42/" /> -->
+    <link rel="stylesheet" href="./rsrc/_42/ui/reset.css" />
 
     <style>
 
@@ -222,45 +222,14 @@ window.onload = function() {
 
 <script>
 
-////// DOM READY CHECK
-domready.then(msg => {
-    start_application('___ DOM ready');
-    const timing = 3000;
-}, err => {
-    console.log(err);
-});
+Promise.all([domready, winready]).then(start_application);
 
-
-
-////// WINDOW READY CHECK
-winready.then(msg => {
-    start_application('___ WINDOW ready');
-const timing = 3000;
-}, err => {
-    console.log(err);
-});
-
-
-
-
-
-
-////// FUNCTION STARTS AFTER DOM IS READY
-function start_application(message) {
-
-    console.log( message );
-
-    ////// PARTIALS
+function start_application() {
+    console.log('documentResolve AND windowResolve OK');
     fetchHtml.all('link');
-    // const partialTags = document.getElementsByTagName("link");
-
-    // for (let i = 0; i < partialTags.length; i++) {
-    //     fetchHtml.partial( partialTags[i] );
-    // }
-    ////// PARTIALS
-  
-
 };
+
+
 
 
 

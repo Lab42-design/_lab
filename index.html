@@ -107,7 +107,7 @@
              repeatCount="indefinite" />
         </path>
         </svg>
-        <link rel="html" href="./rsrc/_42/partialHtml/foo.html" />
+        <link rel="html" href="./rsrc/_42/fetchHtml/foo.html" />
     </div>
     
     <div class="partial">
@@ -115,7 +115,7 @@
         x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
             <use href="#Circle" />
         </svg>
-        <link rel="html" href="./rsrc/_42/partialHtml/bar.html" />
+        <link rel="html" href="./rsrc/_42/fetchHtml/bar.html" />
     </div>
     
     <div class="partial">
@@ -123,7 +123,7 @@
         x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" stroke-width="2" vector-effect="non-scaling-stroke" >
             <use href="#Circle" />
         </svg>
-        <link rel="html" href="./rsrc/_42/partialHtml/baz.html" />
+        <link rel="html" href="./rsrc/_42/fetchHtml/baz.html" />
     </div>
     <!-- <style>
         #E {
@@ -198,7 +198,7 @@ window.onload = function() {
 
 <!-- _42 scripts -->
 <script module src="./rsrc/_42/readyPromise/readyPromise.js"></script>
-<script module src="./rsrc/_42/partialHtml/fetchPartialHtml.js"></script>
+<script module src="./rsrc/_42/fetchHtml/fetchHtml.js"></script>
 
 <script>
 
@@ -256,7 +256,7 @@ function start_application(message) {
     const partialTags = document.getElementsByTagName("link");
 
     for (let i = 0; i < partialTags.length; i++) {
-        Partial.fetchHtml( partialTags[i] );
+        fetchHtml.partial( partialTags[i] );
     }
     ////// PARTIALS
   

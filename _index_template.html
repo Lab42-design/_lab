@@ -35,7 +35,7 @@
 
 <!-- _42 scripts -->
 <script module src="./rsrc/_42/readyPromise/readyPromise.js"></script>
-<script module src="./rsrc/_42/partialHtml/fetchPartialHtml.js"></script>
+<script module src="./rsrc/_42/fetchHtml/fetchHtml.js"></script>
 
 <script>
 domready.then(document_ready);
@@ -70,7 +70,7 @@ function domready_start() {
     const partialTags = document.getElementsByTagName("link");
 
     for (let i = 0; i < partialTags.length; i++) {
-        Partial.fetchHtml( partialTags[i] );
+        fetchHtml.partial( partialTags[i] );
     }
     ////// PARTIALS
 

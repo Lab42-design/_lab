@@ -1,0 +1,42 @@
+git submodule add https://github.com/Lab42-design/_42.git ./rsrc/_42
+git submodule add  https://github.com/Lab42-design/_ui.git ./rsrc/_ui
+
+
+git submodule init
+
+git submodule update
+
+
+git clone --recurse-submodules
+git pull --recurse-submodules
+
+
+To remove a submodule,
+
+Remove it from the .git configuration files:
+git rm ./rsrc/_42/
+git rm ./rsrc/_42/
+
+rm -rf .git/modules/rsrc/_42/
+rm -rf .git/modules/rsrc/_ui/
+
+
+
+
+Remove it from the modules folder. You can also do this from a UI file explorer of some type:
+rm -rf .git/modules/the_submodule
+
+You may also need to remove the subfolder in your repository.
+
+
+From the root of a repository, cat .gitmodules will print contents to the screen.
+
+Because .gitmodule files have the Git configuration format, you can use git config to parse those files:
+
+git config --file .gitmodules --name-only --get-regexp path
+Would show you all submodule entries, and with
+
+git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
+
+
+git submodule update --remote --merge

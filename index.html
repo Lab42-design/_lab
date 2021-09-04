@@ -125,14 +125,8 @@
         </svg>
         <link rel="html" href="./rsrc/_42/fetchHtml/test/baz.html" />
     </div>
-    <!-- <style>
-        #E {
-            width: 40px;
-        }
-    </style>
-    <object id="E" type="image/svg+xml" data="./_tmp/loading.svg">
-        <param name="src" value="loading.svg" />
-    </object> -->
+
+
     
     </section>
     <!-- PARTIAL -->
@@ -187,11 +181,6 @@ window.onload = function() {
 
 
 
-<br>
-<br>
-<br>
-<br><br>
-<br>
 
 
 
@@ -200,39 +189,19 @@ window.onload = function() {
 <script module src="./rsrc/_42/readyPromise/readyPromise.js"></script>
 <script module src="./rsrc/_42/fetchHtml/fetchHtml.src.js"></script>
 
-<script>
 
-// add an appropriate event listener
-// window.addEventListener("htmlPartialsReady", function(e) { 
-//     console.log( 'htmlPartialsReady' );
-// });
-
-// create and dispatch the event
-// const event = new CustomEvent("htmlPartialsReady", {
-//     detail: {
-//         htmlPartialsReady: true
-//     }
-// });
-// window.dispatchEvent(event);
-
-</script>
 
 
 
 
 <script>
 
-Promise.all([domready, winready]).then(start_application);
+Promise.all([domready, winready]).then( start_application() );
 
 function start_application() {
     console.log('documentResolve AND windowResolve OK');
     fetchHtml.all('link');
 };
-
-
-
-
-
 
 
 

@@ -1,3 +1,4 @@
+/* --------------------------- fonts --------------------------- */
 @font-face {
     font-family: 'Headline';
     src: url('./fonts/simplonoi-headline.woff2') format('woff2');
@@ -5,7 +6,6 @@
     font-style: normal;
     font-display: block;
 }
-
 @font-face {
     font-family: 'Light';
     src: url('./fonts/simplonbp-light-webfont.woff2') format('woff2');
@@ -13,7 +13,6 @@
     font-style: normal;
     font-display: block;
 }
-
 @font-face {
     font-family: 'Regular';
     src: url('./fonts/simplonbp-regular-webfont.woff2') format('woff2');
@@ -21,7 +20,6 @@
     font-style: normal;
     font-display: block;
 }
-
 @font-face {
     font-family: 'Medium';
     src: url('./fonts/simplonbp-medium-webfont.woff2') format('woff2');
@@ -29,7 +27,6 @@
     font-style: normal;
     font-display: block;
 }
-
 @font-face {
     font-family: 'Bold';
     src: url('./fonts/simplonbp-bold-webfont.woff2') format('woff2');
@@ -37,7 +34,6 @@
     font-style: normal;
     font-display: block;
 }
-
 @font-face {
     font-family: 'Mono';
     src: url('./fonts/SimplonBPMono-Light.woff2') format('woff2');
@@ -45,7 +41,6 @@
     font-style: normal;
     font-display: block;
 }
-
 @font-face {
     font-family: 'SimplonBPMono Italic';
     src: url('./fonts/SimplonBPMono-LightItalic.woff2') format('woff2');
@@ -54,16 +49,7 @@
     font-display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
+/* demo */
 @font-face {
     font-family: 'Demo';
     src: url('./fonts/simplonoi-headline.woff2') format('woff2');
@@ -88,17 +74,20 @@ body{
 
 
 
-
+/* --------------------------- variables --------------------------- */
 :root {
+    --text-color: black;
     --bg-color: rgba(186, 186, 186, 0.132);
+    --padding: 30px;
+    --margin: 1rem 3rem 1rem 0rem;
 }
 
 
 
 
-
+/* --------------------------- main elements --------------------------- */
 body {
-    padding: 30px;
+    padding: var(--padding);
 }
 
 h1 {
@@ -108,26 +97,30 @@ h1 {
 }
 
 header {
-    /* background-color: darkkhaki; */
+    /* padding: var(--padding); */
+    padding: var(--padding);
+    background: var(--bg-color);
 }
 
-
-
+header
 nav {
     font-family: 'Mono', Helvetica, Arial, sans-serif;
     font-size: 26px;
 	/* line-height: 1.6; */
     background: var(--bg-color);
 }
+header
 nav a {
-    color: gray;
+    color: var(--text-color);
     text-decoration: none;
-    padding: 1rem;
+    /* padding: var(--padding); */
     position: relative; 
 }
+header
 nav a:after {
     content: '>';
 }
+header
 nav a:hover:after {
     content: '!';
     color:deeppink;
@@ -136,38 +129,155 @@ nav a:hover:after {
 
 
 main {
-    /* background-color: rgba(143, 188, 143, 0.228); */
+    padding: var(--padding);
+    background: var(--bg-color);
     /* height: 60vh; */
 }
 
 section {
     width: 100%;
     height: 50vh;
-    padding: 15px;
+    /* padding: var(--padding); */
     background: var(--bg-color);
 }
 
+
+
+
+
+/* --------------------------- footer --------------------------- */
 footer {
-    padding: 30px;
+	display: flex;
+	/* flex-direction: row; */
+	flex-wrap: wrap;
+	/* justify-content: flex-start; */
+	/* align-items: baseline; */
+	/* align-content: center; */
+    padding: var(--padding);
+    background: var(--bg-color);
+}
+footer 
+ul {
+    background: var(--bg-color);
+    margin: 1rem 3rem 1rem 0rem;
+    flex-grow: 1;
+    flex-basis: 100px;
+}
+footer 
+ul:last-child {
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+footer 
+ul li {
     display: flex;
-    /* background-color: darkgrey; */
+    background: var(--bg-color);
+}
+footer 
+ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 2rem 0 0;
+    background: var(--bg-color);
+}
+footer 
+ul:first-child::before {
+    content: '_contact';
+}
+footer 
+ul:nth-child(2)::before {
+    content: '_info';
+}
+footer 
+ul:nth-child(3)::before {
+    content: '_social';
+}
+/* footer 
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 2rem 0 0;
+    background: var(--bg-color);
+} */
+
+
+
+
+/* other stuff */
+footer
+h5 {
+    font-size: 16px;
+    margin: 0;
+}
+footer
+nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+
+    width: 100%;
+    padding: var(--padding);
+    background: var(--bg-color);
+}
+footer
+nav 
+div {
+    flex-grow: 1;
+    flex-basis: 100px;
+    background: var(--bg-color);
+}
+
+
+
+
+
+footer 
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 2rem 0 0;
+    background: var(--bg-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* labels */
+
+
+header, main, footer, section {
+    /* display: block; */
+    /* position: relative; */
+    /* padding: 0;
+    margin: 0; */
+}
+/* header::before {
+    content: '_navigation';
+}
+main::before {
+    content: '_content';
 }
 footer::before {
     content: '_footer';
-
-    display: block;
+} */
+/* section::before {
+    content: '_section';
+} */
+header::before, main::before, footer::before, section::before {
+    /* display: inline-block;
+    margin: -20px 0 0 0;
     position: absolute;
-    left: 0px;
-
-    font-size: 14px;
-
-
-
+    left: 0;
     color: gray;
-    /* background: red; */
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
+    font-size: 14px; */
+} 

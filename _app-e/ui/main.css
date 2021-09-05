@@ -1,8 +1,6 @@
 
+/* --------------------- fonts and typgraphy --------------------- */
 @import './fonts.css';
-
-
-
 
 /* demo */
 @font-face {
@@ -40,7 +38,7 @@ body{
 
 
 
-/* --------------------------- main elements --------------------------- */
+/* ------------------------- main elements ------------------------- */
 body {
     padding: var(--padding);
 }
@@ -103,33 +101,23 @@ section {
 
 /* --------------------------- footer --------------------------- */
 footer {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+	/* flex-direction: row; */
 	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
-	align-content: flex-start;
-
+	/* justify-content: flex-start; */
+	/* align-items: baseline; */
+	/* align-content: center; */
     padding: var(--padding);
     background: var(--bg-color);
 }
-footer nav {
-    width: 600px;
-    border: 3px aqua dotted;
-
-    display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
-	align-content: flex-start;
-}
 footer 
 ul {
+    /* display: inline-block; */
+    /* width:max-content; */
     background: var(--bg-color);
-    margin: 1rem 3rem 1rem 0rem;
+    /* margin: 1rem 3rem 1rem 0rem;
     flex-grow: 1;
-    flex-basis: 100px;
+    flex-basis: 100px; */
 }
 footer 
 ul:last-child {

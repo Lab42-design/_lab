@@ -94,7 +94,6 @@ section {
     height: 50vh;
     /* padding: var(--padding); */
     background: var(--bg-color);
-    margin: 0 0 2rem 0;
 }
 
 
@@ -104,25 +103,13 @@ section {
 /* --------------------------- footer --------------------------- */
 footer {
 	display: flex;
-	flex-direction: row;
+	/* flex-direction: row; */
 	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
-	align-content: flex-start;
-
+	/* justify-content: flex-start; */
+	/* align-items: baseline; */
+	/* align-content: center; */
     padding: var(--padding);
     background: var(--bg-color);
-}
-footer nav {
-    width: 600px;
-    border: 3px aqua dotted;
-
-    display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
-	align-content: flex-start;
 }
 footer 
 ul {

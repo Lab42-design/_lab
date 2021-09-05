@@ -1,49 +1,49 @@
 /* --------------------------- fonts --------------------------- */
 @font-face {
     font-family: 'Headline';
-    src: url('./fonts/simplonoi-headline.woff2') format('woff2');
+    src: url('./simplonoi-headline.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-face {
     font-family: 'Light';
-    src: url('./fonts/simplonbp-light-webfont.woff2') format('woff2');
+    src: url('./simplonbp-light-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-face {
     font-family: 'Regular';
-    src: url('./fonts/simplonbp-regular-webfont.woff2') format('woff2');
+    src: url('./simplonbp-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-face {
     font-family: 'Medium';
-    src: url('./fonts/simplonbp-medium-webfont.woff2') format('woff2');
+    src: url('./simplonbp-medium-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-face {
     font-family: 'Bold';
-    src: url('./fonts/simplonbp-bold-webfont.woff2') format('woff2');
+    src: url('./simplonbp-bold-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-face {
     font-family: 'Mono';
-    src: url('./fonts/SimplonBPMono-Light.woff2') format('woff2');
+    src: url('./SimplonBPMono-Light.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-face {
     font-family: 'SimplonBPMono Italic';
-    src: url('./fonts/SimplonBPMono-LightItalic.woff2') format('woff2');
+    src: url('./SimplonBPMono-LightItalic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: block;

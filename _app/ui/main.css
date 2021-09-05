@@ -1,5 +1,5 @@
 
-@import './fonts.css';
+@import '../../rsrc/_static/fonts/fonts-simplon.css';
 
 
 
@@ -7,7 +7,7 @@
 /* demo */
 @font-face {
     font-family: 'Demo';
-    src: url('./fonts/simplonoi-headline.woff2') format('woff2');
+    src: url('./../../rsrc/_static/fonts/simplonoi-headline.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -40,7 +40,7 @@ body{
 
 
 
-/* --------------------------- main elements --------------------------- */
+/* ------------------------- main elements ------------------------- */
 body {
     padding: var(--padding);
 }
@@ -51,6 +51,8 @@ h1 {
     color: dimgrey;
 }
 
+
+/* ----------------------- header / navigation ----------------------- */
 header {
     /* padding: var(--padding); */
     padding: var(--padding);
@@ -74,9 +76,10 @@ nav a {
 header
 nav a:after {
     content: '>';
+    margin: 0 0.3rem 0 0.3rem;
 }
 header
-nav a:hover:after {
+nav a:hover::after, nav a:hover:active::after {
     content: '!';
     color:deeppink;
 }
@@ -202,10 +205,20 @@ footer {
 
 
 /* other stuff */
+a:after {
+    content: '↑';
+    margin: 0 0.3rem 0 0.3rem;
+}
+a:hover::after, nav a:hover:active::after {
+    content: '!';
+    color:deeppink;
+}
 
 
-
-
+/* ↑	Upwards Arrow	24
+↓	Downwards Arrow	25
+→	Rightwards Arrow	26
+←	Leftwards Arrow	27 */
 
 
 

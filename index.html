@@ -4,43 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL</title>
+    <title>Document</title>
 </head>
 <body>
+
+    <ul class="navbar-list">
+        <li class="navbar-item">
+          <a class="button" href="#about" onclick="onNavClick('/about'); return false;">About</a>
+        </li>
+        <li class="navbar-item">
+          <a class="button" href="#" onclick="onNavClick('/'); return false;">Home</a>
+        </li>
+        <li class="navbar-item">
+          <a class="button" href="#contact" onclick="onNavClick('/contact'); return false;">Contact</a>
+        </li>
+      </ul>
+      
+      <div id="content"></div>
   
-    
-    https://stackoverflow.com/questions/4939805/change-all-links-hrefs-urls-with-vanilla-javascript-regex
-
-
-
-<script src="//unpkg.com/navigo"></script>
-
-<script>
-console.log('____________________________');
-const router = new Navigo('/');
-
-router.on('/my/awesome/app', function () {
-	console.log('____________________________ ROUTE 1');
-});
-
-router.resolve();
 
 
 
 
-console.log('____________________________');
 
+      <p>This example uses the addEventListener() method to attach a "click" event to a p element.</p>
 
-
-
-const queryString = window.location.search;
-console.log('queryString == ' + queryString);
-
-
-
-
-</script>
-
+      <p id="demo">Click me.</p>
+      
+      <script>
+      document.getElementById("demo").addEventListener("click", myFunction);
+      
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+      }
+      </script>
 
 
 
@@ -49,230 +46,108 @@ console.log('queryString == ' + queryString);
 <script>
 
 
+const list = document.getElementsByClassName("button");
 
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+document.getElementById("demo").addEventListener("click", myFunction);
+
+for (let i = 0; i < list.length; i++) {
+
+    // console.log('____ button + ' + i + ' ' + list[i] );
+
+    console.log('_____');
+    console.log( list[i].getAttribute("href") );
+    // document.list[i].addEventListener("click", myFunction);
+
+    // getAttribute("href")
+    // list[i] is a node with the desired class name
+
 }
 
 
 
-// console.log(getQueryVariable("id"));
+
+
+
+
+// console.log(list);
+
+
+
+
+
+
+
+
+const rootDiv = document.getElementById('content');
+
+//Declare the variables for home, about & contact html pages
+let home = '';
+let about = '';
+let contact = '';
 
 
 
 
 /**
- * Get the URL parameters
- * source: https://css-tricks.com/snippets/javascript/get-url-variables/
- * @param  {String} url The URL
- * @return {Object}     The URL parameters
+ *
+ * @param {String} page - Represents the page information that needs to be retrieved
+ * @returns {String} resHtml - The Page's HTML is returned from the async invocation
  */
- var getParams = function (url) {
-	var params = {};
-	var parser = document.createElement('a');
-	parser.href = url;
-	var query = parser.search.substring(1);
-	var vars = query.split('&');
-	for (var i = 0; i < vars.length; i++) {
-		var pair = vars[i].split('=');
-		params[pair[0]] = decodeURIComponent(pair[1]);
-	}
-	return params;
+const loadPage = async (page) => {
+    const response = await fetch(page);
+    const resHtml = await response.text();
+    return resHtml;
 };
-
-// Get parameters from the current URL
-getParams(window.location.href);
-
-// Get parameters from a URL string
-var url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
-getParams(url);
-
-// console.log( getParams(url) );
-
-
-
-
-
-
-
-
-
-
-
-var get = function (obj, path, def) {
 
 /**
- * If the path is a string, convert it to an array
- * @param  {String|Array} path The path
- * @return {Array}             The path array
+ * The Async function loads all HTML to the variables 'home', 'about' & 'contact'
  */
-var stringToPath = function (path) {
-
-	// If the path isn't a string, return it
-	if (typeof path !== 'string') return path;
-
-	// Create new array
-	var output = [];
-
-	// Split to an array with dot notation
-	path.split('.').forEach(function (item, index) {
-
-		// Split to an array with bracket notation
-		item.split(/\[([^}]+)\]/g).forEach(function (key) {
-
-			// Push to the new array
-			if (key.length > 0) {
-				output.push(key);
-			}
-
-		});
-
-	});
-
-	return output;
-
+const loadAllPages = async () => {
+    home = await loadPage('home.html');
+    about = await loadPage('about.html');
+    contact = await loadPage('contact.html');
 };
 
-// Get the path as an array
-path = stringToPath(path);
-
-// Cache the current object
-var current = obj;
-
-// For each item in the path, dig into the object
-for (var i = 0; i < path.length; i++) {
-
-	// If the item isn't found, return the default (or null)
-	if (!current[path[i]]) return def;
-
-	// Otherwise, update the current  value
-	current = current[path[i]];
-
-}
-
-return current;
-
+/**
+ * The Main Function is an async function that first loads All Page HTML to the variables
+ * Once the variables are loaded with the contents, then they are assigned to the 'routes' variable
+ */
+const main = async () => {
+  await loadAllPages();
+  rootDiv.innerHTML = home;
+    routes = {
+        '/': home,
+        '/contact': contact,
+        '/about': about,
+    };
 };
 
+// Invoke the Main function
+main();
 
-
-var obj = {
-	'a': [
-		{
-			'b': {
-				'c': 3
-			}
-		}
-	]
+/**
+ *
+ * @param {String} pathname - Pass the 'pathname' passed from onClick function of the link (index.html)
+ * The function is invoked when any link is clicked in the html.
+ * The onClick event on the html invokes the onNavClick & passes the pathname as param
+ */
+const onNavClick = (pathname) => {
+    window.history.pushState({}, pathname, window.location.origin + pathname);
+    rootDiv.innerHTML = routes[pathname];
 };
 
-var get1 = get(obj, 'a[0].b.c');
-var get2 = get(obj, ['a', '0', 'b', 'c']);
-var get3 = get(obj, 'a.b.c', 'not found');
-
-console.log(get1);
-console.log(get2);
-console.log(get3);
-
-
-
+/**
+ * The Function is invoked when the window.history's state changes
+ */
+window.onpopstate = () => {
+    rootDiv.innerHTML = routes[window.location.pathname];
+};
 
 
 
 </script>
-<!-- a 
-<script>
-var url = new URL('https://learning.gomakethings.com/search?query=fetch&page=2#using-the-fetch-api');
-
-console.log(url);
 
 
-
-// Get the value for the the "query" parameter
-// returns "fetch"
-url.searchParams.get('query');
-
-// Gets all matching values, if there's more than one
-// returns ["fetch"]
-url.searchParams.getAll('query');
-
-// Checks if a value exists in the search params (boolean)
-// returns true
-url.searchParams.has('query');
-
-// Gets an Iterator of keys
-// Iterators can be looped through with a for...of
-url.searchParams.keys();
-
-// Gets an iterator of values
-url.searchParams.values();
-
-// Appends a new search parameter entry
-// This adds an *additional* entry if the key already exists
-url.searchParams.append('query', 'chicken');
-
-// Sets a search parameter entry
-// If the value already exists, it will replace it
-// If there are more than one, all others are deleted
-url.searchParams.set('query', 'chicken');
-
-// Deletes all instances of a search parameter
-url.searchParams.delete('query');
-
-// Provides an iterator method for looping through search parameter values
-url.searchParams.forEach(function (value, key) {
-	console.log(key, value);
-});
-
-// Sorts search parameters alphabetically by key
-url.searchParams.sort();
-
-
-
-////
-
-/**
- * Get the URL parameters
- * source: https://css-tricks.com/snippets/javascript/get-url-variables/
- * @param  {String} url The URL
- * @return {Object}     The URL parameters
- */
- var getParams = function (url) {
-	var params = {};
-	var parser = document.createElement('a');
-	parser.href = url;
-	var query = parser.search.substring(1);
-	var vars = query.split('&');
-	for (var i = 0; i < vars.length; i++) {
-		var pair = vars[i].split('=');
-		params[pair[0]] = decodeURIComponent(pair[1]);
-	}
-	return params;
-};
-
-
-// Get parameters from the current URL
-getParams(window.location.href);
-
-// Get parameters from a URL string
-var url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
-getParams(url);
-
-
-
-
-
-
-
-</script>
--->
 
 
 

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL</title>
+</head>
+<body>
+  
+    
+    https://stackoverflow.com/questions/4939805/change-all-links-hrefs-urls-with-vanilla-javascript-regex
+
+
+
+<script src="//unpkg.com/navigo"></script>
+
+<script>
+console.log('____________________________');
+const router = new Navigo('/');
+
+router.on('/my/awesome/app', function () {
+	console.log('____________________________ ROUTE 1');
+});
+
+router.resolve();
+
+
+
+
+console.log('____________________________');
+
+
+
+
+const queryString = window.location.search;
+console.log('queryString == ' + queryString);
+
+
+
+
+</script>
+
+
+
+
+
+
+<script>
+
+
+
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
+
+
+// console.log(getQueryVariable("id"));
+
+
+
+
+/**
+ * Get the URL parameters
+ * source: https://css-tricks.com/snippets/javascript/get-url-variables/
+ * @param  {String} url The URL
+ * @return {Object}     The URL parameters
+ */
+ var getParams = function (url) {
+	var params = {};
+	var parser = document.createElement('a');
+	parser.href = url;
+	var query = parser.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		params[pair[0]] = decodeURIComponent(pair[1]);
+	}
+	return params;
+};
+
+// Get parameters from the current URL
+getParams(window.location.href);
+
+// Get parameters from a URL string
+var url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
+getParams(url);
+
+// console.log( getParams(url) );
+
+
+
+
+
+
+
+
+
+
+
+var get = function (obj, path, def) {
+
+/**
+ * If the path is a string, convert it to an array
+ * @param  {String|Array} path The path
+ * @return {Array}             The path array
+ */
+var stringToPath = function (path) {
+
+	// If the path isn't a string, return it
+	if (typeof path !== 'string') return path;
+
+	// Create new array
+	var output = [];
+
+	// Split to an array with dot notation
+	path.split('.').forEach(function (item, index) {
+
+		// Split to an array with bracket notation
+		item.split(/\[([^}]+)\]/g).forEach(function (key) {
+
+			// Push to the new array
+			if (key.length > 0) {
+				output.push(key);
+			}
+
+		});
+
+	});
+
+	return output;
+
+};
+
+// Get the path as an array
+path = stringToPath(path);
+
+// Cache the current object
+var current = obj;
+
+// For each item in the path, dig into the object
+for (var i = 0; i < path.length; i++) {
+
+	// If the item isn't found, return the default (or null)
+	if (!current[path[i]]) return def;
+
+	// Otherwise, update the current  value
+	current = current[path[i]];
+
+}
+
+return current;
+
+};
+
+
+
+var obj = {
+	'a': [
+		{
+			'b': {
+				'c': 3
+			}
+		}
+	]
+};
+
+var get1 = get(obj, 'a[0].b.c');
+var get2 = get(obj, ['a', '0', 'b', 'c']);
+var get3 = get(obj, 'a.b.c', 'not found');
+
+console.log(get1);
+console.log(get2);
+console.log(get3);
+
+
+
+
+
+
+</script>
+<!-- a 
+<script>
+var url = new URL('https://learning.gomakethings.com/search?query=fetch&page=2#using-the-fetch-api');
+
+console.log(url);
+
+
+
+// Get the value for the the "query" parameter
+// returns "fetch"
+url.searchParams.get('query');
+
+// Gets all matching values, if there's more than one
+// returns ["fetch"]
+url.searchParams.getAll('query');
+
+// Checks if a value exists in the search params (boolean)
+// returns true
+url.searchParams.has('query');
+
+// Gets an Iterator of keys
+// Iterators can be looped through with a for...of
+url.searchParams.keys();
+
+// Gets an iterator of values
+url.searchParams.values();
+
+// Appends a new search parameter entry
+// This adds an *additional* entry if the key already exists
+url.searchParams.append('query', 'chicken');
+
+// Sets a search parameter entry
+// If the value already exists, it will replace it
+// If there are more than one, all others are deleted
+url.searchParams.set('query', 'chicken');
+
+// Deletes all instances of a search parameter
+url.searchParams.delete('query');
+
+// Provides an iterator method for looping through search parameter values
+url.searchParams.forEach(function (value, key) {
+	console.log(key, value);
+});
+
+// Sorts search parameters alphabetically by key
+url.searchParams.sort();
+
+
+
+////
+
+/**
+ * Get the URL parameters
+ * source: https://css-tricks.com/snippets/javascript/get-url-variables/
+ * @param  {String} url The URL
+ * @return {Object}     The URL parameters
+ */
+ var getParams = function (url) {
+	var params = {};
+	var parser = document.createElement('a');
+	parser.href = url;
+	var query = parser.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		params[pair[0]] = decodeURIComponent(pair[1]);
+	}
+	return params;
+};
+
+
+// Get parameters from the current URL
+getParams(window.location.href);
+
+// Get parameters from a URL string
+var url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
+getParams(url);
+
+
+
+
+
+
+
+</script>
+-->
+
+
+
+
+
+</body>
+</html>
